@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>@</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        let text = "@Overjoy06"; 
+        let i = 1;
+        let typing = true;
+
+        function typeEffect() {
+            if (typing) {
+                if (i <= text.length) {
+                    document.title = text.substring(0, i);
+                    i++;
+                    setTimeout(typeEffect, 250); 
+                } else {
+                    typing = false;
+                    setTimeout(typeEffect, 250); 
+                }
+            } else {
+            if (i > 1) {
+                document.title = text.substring(0, i);
+                i--;
+                setTimeout(typeEffect, 250); 
+            } else {
+                typing = true;
+                setTimeout(typeEffect, 250);
+            }
+            }
+        }
+
+        typeEffect();
+        });
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Nunito:wght@400&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; 
+        }
+
+        body {
+            background-image: url('images/bg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            font-size: 25px;
+            margin: 0px;
+        }
+        
+        .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        .profile {
+            height: 75px;
+            width: 350px;
+            padding: 30px 30px 30px 20px;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.027);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.089);
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .profile img {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        
+        .profile img:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .right-img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            margin-left: auto; 
+        }
+
+        .right-img:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a b {
+            transition: text-shadow 0.3s ease, color 0.3s ease;
+        }
+        
+        a b:hover {
+            color: #FFD700;
+            text-shadow: 0 0 8px #FFD700, 0 0 16px #FFA500;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .button-row a img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .button-row a img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="images/profile-picture.jpg" alt="Profile Picture">
+            <div class="text">
+                <h1>Overjoy06</h1>
+                <h1 class="subtitle" style="font-size: 10px;">BSIT Student - 2nd Year</h1>
+                <h1 class="subtitle"><b style="color: #FFFFFF; line-height: 40px;">Listening to</b> 
+                    <a href="https://open.spotify.com/playlist/7hWWrKKqdcGOHO8vNBM3ww?si=23ee28633eb74a1c" target="_blank">
+                        <b style="color: #Ffd700">PEAK</b>
+                    </a>
+                </h1>
+            </div>
+            <img class="right-img" src="images/peak.jpg" alt="Icon">
+        </div>
+
+        <div class="button-row">
+            <a href="https://steamcommunity.com/id/Overjoy06/" target="_blank"><img src="images/icons/steam.png" alt="Steam"></a>
+            <a href="https://github.com/Overjoy06-Github" target="_blank"><img src="images/icons/github.png" alt="GitHub"></a>
+        </div>
+    </div>
+</body>
+
+</html>
